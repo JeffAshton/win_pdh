@@ -12,4 +12,4 @@ Setup
 Make sure you have a working Go installation.
 See [Getting Started](http://golang.org/doc/install.html)
 
-Now run `go get github.com/lxn/win_pdh`
+Now run `go get github.com/JeffAshton/win_pdh`
