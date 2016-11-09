@@ -1,14 +1,24 @@
-// Copyright 2013 The win Authors. All rights reserved.
+// Copyright 2013 The win_pdh Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
 // +build windows
 
-package win
+package win_pdh
 
 import (
 	"syscall"
 	"unsafe"
+)
+
+// Error codes
+const (
+	ERROR_SUCCESS             = 0
+	ERROR_INVALID_FUNCTION    = 1
+)
+
+type (
+	HANDLE    uintptr
 )
 
 // PDH error codes, which can be returned by all Pdh* functions. Taken from mingw-w64 pdhmsg.h
@@ -433,4 +443,11 @@ func PdhValidatePath(path string) uint32 {
 	ret, _, _ := pdh_ValidatePathW.Call(uintptr(unsafe.Pointer(ptxt)))
 
 	return uint32(ret)
+}
+
+func UTF16PtrToString(s *uint16) string {
+	if s == nil {
+		return ""
+	}
+	return syscall.UTF16ToString((*[1 << 29]uint16)(unsafe.Pointer(s))[0:])
 }

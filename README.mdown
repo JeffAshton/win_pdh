@@ -1,9 +1,9 @@
-About win
-=========
+About win_pdh
+=============
 
-win is a Windows API wrapper package for Go.
+win_pdh is a Windows Performance Data Helper wrapper package for Go.
 
-Originally part of [walk](https://github.com/lxn/walk), it is now a separate
+Originally part of [walk](https://github.com/lxn/walk) and [win](https://github.com/lxn/win), it is now a separate
 project.
 
 Setup
@@ -12,4 +12,4 @@ Setup
 Make sure you have a working Go installation.
 See [Getting Started](http://golang.org/doc/install.html)
 
-Now run `go get github.com/lxn/win`
+Now run `go get github.com/lxn/win_pdh`
